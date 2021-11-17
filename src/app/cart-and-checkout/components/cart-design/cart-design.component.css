@@ -1,0 +1,133 @@
+.container {
+    margin-top: 2rem;
+}
+
+#firstCard {
+    margin-bottom: 2rem;
+    font-family: 'Lato';
+    border: none;
+    width: 700px;
+    height: 180px;
+}
+
+#secondCard {
+    background-color: #E6E6E6;
+    border: none;
+    border-radius: 0px;
+    margin-bottom: 2rem;
+}
+
+#firstCard img {
+    width: 400px;
+    height: 180px;
+    object-fit: cover;
+}
+
+#cantidadInput {
+    width: 65px;
+    border-radius: 0px;
+    border: solid black 1px;
+}
+
+#cantidadInput:focus {
+    outline: none;
+}
+
+#titleDescriptions {
+    font-family: 'Lato';
+    font-size: 22px;
+}
+
+.hrBar {
+    width: 100%;
+}
+
+#envio select {
+    font-family: 'Lato';
+    font-weight: bold;
+    width: 100%;
+    border: none;
+    height: 40px;
+}
+
+#envio select:focus {
+    outline: none;
+}
+
+#direccion input {
+    font-family: 'Lato';
+    font-size: 18px;
+    text-indent: 5px;
+    border: none;
+    width: 100%;
+    height: 40px;
+}
+
+#direccion input:focus {
+    outline: none;
+}
+
+#telefono input {
+    text-indent: 5px;
+    width: 100%;
+    height: 40px;
+    border: none;
+}
+
+#telefono input:focus {
+    outline: none;
+}
+
+#telefono input::-webkit-outer-spin-button,
+#telefono input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+form * {
+    font-family: 'Lato';
+}
+
+form button {
+    font-family: 'Lato';
+    font-size: 20px;
+    color: #FFF;
+    width: 100%;
+    height: 40px;
+    border: none;
+    background-color: #2A7712;
+    transition: 0.2s;
+}
+
+form button:hover {
+    background-color: #2C8412;
+}
+
+.itemTitle {
+    width: 150px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#crossIcon {
+    color: red;
+}
+
+#crossIcon:hover {
+    cursor: pointer;
+}
+
+#exclamationIcon {
+    color: black;
+}
+
+#descContainer {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 2rem 0 300px;
+}
+
+#descContainer p:first-of-type {
+    margin-right: 3rem;
+}

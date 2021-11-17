@@ -1,0 +1,90 @@
+.card {
+    margin: 2rem 0 2rem 0;
+    border: none;
+}
+
+form {
+    width: 30rem;
+}
+
+.email {
+    display: flex;
+    flex-direction: column;
+    max-width: 25rem;
+}
+
+.pass {
+    display: flex;
+    flex-direction: column;
+    max-width: 25rem;
+    margin-top: 1rem;
+}
+
+.repeatPass {
+    display: flex;
+    flex-direction: column;
+    max-width: 25rem;
+    margin-top: 1rem;
+}
+
+.register {
+    display: flex;
+    flex-direction: column;
+    max-width: 25rem;
+    margin: 2rem 0 0 0;
+}
+
+.terms {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.terms h6 {
+    position: relative;
+    top: 4px;
+    margin-left: 5px;
+    font-family: 'Lato';
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.terms a {
+    text-decoration: none;
+    color: blue;
+}
+
+.terms a:hover {
+    text-decoration: underline;
+}
+
+form input {
+    font-family: 'Lato';
+    font-size: 18px;
+    border-radius: 0;
+}
+
+form input:focus {
+    box-shadow: none;
+}
+
+form h4 {
+    font-family: 'Lato';
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.register button {
+    border-radius: 0;
+    font-family: 'Lato';
+    font-size: 18px;
+    color: #FFF;
+    background-color: brown;
+    border: none;
+    height: 40px;
+}
+
+.register button:hover {
+    background-color: darkred;
+}

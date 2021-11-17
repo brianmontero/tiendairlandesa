@@ -1,0 +1,150 @@
+footer {
+    background-color: #202020;
+    box-shadow: 7px;
+}
+
+h3 {
+    margin-top: 1rem;
+    font-family: 'Lato';
+    font-weight: bold;
+    color: #FFF;
+    font-size: 24px;
+}
+
+.SobreNosotrosInfo {
+    display: flex;
+    justify-content: center;
+}
+
+.SobreNosotrosInfo a {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    color: #FFF;
+}
+
+.SobreNosotrosInfo a:hover {
+    text-decoration: underline;
+}
+
+.RedesSocialesCont {
+    position: relative;
+    right: -30px;
+    padding: 15px;
+}
+
+.RedesSocialesCont i {
+    margin-right: 3rem;
+    position: relative;
+    right: 5px;
+}
+
+#facebook {
+    color: #FFF;
+    transition: 0.2s;
+}
+
+#twitter {
+    color: #FFF;
+    transition: 0.2s;    
+}
+
+#instagram {
+    color: #FFF;
+    transition: 0.2s;
+}
+
+#instagram:hover {
+    color: #FCAF45;
+}
+
+#twitter:hover {
+    color: #00acee;
+}
+
+#facebook:hover {
+    color: #3b5998;
+}
+
+h2 {
+    margin-top: 1rem;
+    font-family: 'Lato';
+    font-weight: bold;
+    font-size: 22px;
+    color: #FFF;
+}
+
+.labelContact {
+    font-family: 'Lato';
+    font-size: 18px;
+    color: #FFF;
+}
+
+form input {
+    width: 400px;
+    border: none;
+    border-radius: 0;
+    font-family: 'Lato';
+}
+
+form input:focus {
+    box-shadow: none;
+}
+
+textarea {
+    width: 500px;
+    height: 100px;
+    border: none;
+    border-radius: 0;
+    font-family: 'Lato';
+}
+
+textarea:focus {
+    outline: none;
+    text-indent: 5px;
+}
+
+.nombre {
+    margin-bottom: 1rem;
+}
+
+.email {
+    margin-top: 1rem;
+}
+
+.mensaje {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+button {
+    border: none;
+    border-radius: 0;
+    margin-bottom: 1rem;
+    width: 90px;
+    height: 35px;
+    font-family: 'Lato';
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+button:hover {
+    background-color: #CCC;
+}
+
+.info {
+    color: #CCC;
+    text-align: center;
+    font-family: 'Lato';
+    font-size: 14px;
+}
+
+.github {
+    text-decoration: none;
+    color: #FCAF45;
+}
+
+.github:hover {
+    text-decoration: underline;
+}

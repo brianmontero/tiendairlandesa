@@ -1,0 +1,111 @@
+#firstNav {
+    background-color: #202020;
+}
+
+#lastNav {
+    background-color: #202020;
+    box-shadow: 0 0 7px 0;
+}
+
+#initialNav {
+    height: 40px;
+    background-color: #303030;
+}
+
+#initialCont {
+    margin: 0 2rem 0 2rem;
+}
+
+#containerFirst {
+    margin: 0 2rem 0 2rem;
+}
+
+#containerLast {
+    margin: 0 2rem 0 2rem;
+}
+
+li {
+    margin-right: 3rem;
+}
+
+li a {
+    text-decoration: none;
+    color: #FFF;
+    font-family: 'Lato';
+    font-size: 20px;
+    transition: 0.2s;
+}
+
+li a:hover {
+    color: #CCC;
+}
+
+#searchInput {
+    font-family: 'Lato';
+    font-size: 18px;
+    width: 400px;
+    border: none;
+    border-radius: 3px;
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration { 
+    display: none;
+}
+
+#searchInput:focus {
+    box-shadow: none;
+}
+
+#searchIcon {
+    color: #202020;
+    position: relative;
+    top: 13px;
+    right: 30px;
+}
+
+#userIcon {
+    color: #FFF;
+}
+
+.vl {
+    margin-left: 10px;
+    border-left: 1px solid #FFF;
+    height: 30px;
+}
+
+.registrarse {
+    margin-left: 10px;
+    font-family: 'Lato';
+    color: #FFF;
+    text-decoration: none;
+}
+
+.registrarse:hover {
+    text-decoration: underline;
+}
+
+.ingresar {
+    margin-left: 5px; 
+    color: #FFF; 
+    font-family: 'Lato'; 
+    text-decoration: none;
+}
+
+.ingresar:hover {
+    text-decoration: underline;
+}
+
+#cartIcon {
+    color: #FFF;
+}
+
+.cart a {
+    margin-right: 5px;
+}
+
+.cart:hover {
+    cursor: pointer;
+}

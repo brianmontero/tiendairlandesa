@@ -1,0 +1,84 @@
+.card {
+    margin: 2rem 0 2rem 0;
+    width: 40rem;
+    border: none;
+}
+
+.email {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    max-width: 25rem;
+    margin: 2rem 0 2rem 0;
+}
+
+.email h4 {
+    font-family: 'Lato';
+}
+
+.pass {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    max-width: 25rem;
+}
+
+.pass h4 {
+    font-family: 'Lato';
+}
+
+.submit {
+    display: flex;
+    flex-direction: column;
+    max-width: 25rem;
+    margin: 2rem 0 2rem 0;
+}
+
+.submit button {
+    height: 40px;
+    font-family: 'Lato';
+    font-size: 20px;
+    background-color: brown;
+    color: #FFF;
+    border: none;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+.submit button:hover {
+    background-color: darkred;
+}
+
+input {
+    border-radius: 0;
+}
+
+input:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.email i {
+    position: absolute;
+    left: 375px;
+    top: 47px;
+    color: black;
+}
+
+.pass i {
+    position: absolute;
+    left: 375px;
+    top: 47px;
+    color: black;
+}
+
+.info a {
+    font-family: 'Lato';
+    font-size: 18px;
+    text-decoration: none;
+    color: black;
+}
+
+.info a:hover {
+    text-decoration: underline;
+}

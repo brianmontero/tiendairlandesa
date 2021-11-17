@@ -1,0 +1,85 @@
+.container {
+    margin-top: 2rem;
+}
+
+form {
+    max-width: 35rem;
+    display: flex;
+    flex-direction: column;
+}
+
+form div p {
+    font-family: 'Lato';
+    font-size: 18px;
+    font-weight: bold;
+}
+
+form div input {
+    font-family: 'Lato';
+    border: 1px solid black;
+    border-radius: 2px;
+}
+
+form div input:focus {
+    box-shadow: none;
+}
+
+.identity {
+    display: flex;
+}
+
+.name {
+    width: 20rem;
+}
+
+.last-name {
+    margin-left: 5rem;
+    width: 20rem;
+}
+
+.address {
+    margin-top: 1rem;
+}
+
+.city {
+    margin-top: 1rem;    
+}
+
+.postal  {
+    margin-top: 1rem;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.phone {
+    margin-top: 1rem;
+}
+
+.email {
+    margin: 1rem 0 2rem 0;
+}
+
+.title {
+    font-family: 'Lato';
+    margin-bottom: 2rem;
+}
+
+.check {
+    margin-bottom: 1rem;
+}
+
+.button button {
+    width: 200px;
+    border: none;
+    height: 45px;
+    border-radius: 5px;
+    background-color: #006600;
+    color: #FFF;
+    font-family: 'Lato';
+    font-weight: bold;
+    margin-bottom: 3rem;
+}

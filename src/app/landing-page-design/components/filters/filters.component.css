@@ -1,0 +1,96 @@
+* {
+    font-family: 'Lato';
+}
+
+.card {
+    border: none;
+}
+
+h4 {
+    font-weight: bold;
+}
+
+.rango {
+    margin-bottom: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.red {
+    width: 25px;
+    height: 25px;
+    border-radius: 3px;
+    border: none;
+    background-color: red;
+}
+
+.black {
+    width: 25px;
+    height: 25px;
+    border-radius: 3px;
+    border: none;
+    background-color: black;
+}
+
+.blue {
+    width: 25px;
+    height: 25px;
+    border-radius: 3px;
+    border: none;
+    background-color: blue;
+}
+
+.green {
+    width: 25px;
+    height: 25px;
+    border-radius: 3px;
+    border: none;
+    background-color: green;
+}
+
+.grey {
+    width: 25px;
+    height: 25px;
+    border-radius: 3px;
+    border: none;
+    background-color: grey;
+}
+
+.white {
+    width: 25px;
+    height: 25px;
+    border-radius: 3px;
+    border: 1px solid #CCC;
+    background-color: #FFF;
+}
+
+#colorContainer div {
+    transition: 0.2s;
+}
+
+#colorContainer div:hover {
+    cursor: pointer;
+    border: solid .5px black;
+}
+
+.rango a:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.deleteFilters {
+    font-size: 22px;
+    margin-top: 1rem;
+}
+
+.deleteFilters:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}

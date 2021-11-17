@@ -1,0 +1,35 @@
+.itemTitle {
+    width: 150px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#crossIcon {
+    color: red;
+}
+
+#crossIcon:hover {
+    cursor: pointer;
+}
+
+#cantidadInput {
+    width: 65px;
+    border-radius: 0px;
+    border: solid black 1px;
+}
+
+#cantidadInput:focus {
+    outline: none;
+}
+
+#titleDescriptions {
+    font-family: 'Lato';
+    font-size: 22px;
+}
+
+img {
+    width: 400px;
+    height: 180px;
+    object-fit: cover;
+}

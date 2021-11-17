@@ -1,0 +1,43 @@
+.container-fluid {
+    margin-top: 2rem;
+}
+
+.notFound {
+    color: grey;
+    display: flex;
+    justify-content: center;
+}
+
+.notFoundText {
+    font-family: 'Lato';
+    font-size: 25px;
+}
+
+#boxIcon {
+    display: flex;
+    color: grey;
+}
+
+.icon {
+    display: flex;
+    justify-content: center;
+}
+
+.btnReturn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    font-family: 'Lato';
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 5px;
+    width: 200px;
+    height: 40px;
+    border: none;
+    background-color: #FFF;
+}
+
+.btnReturn:hover {
+    background-color: #CCC;
+}

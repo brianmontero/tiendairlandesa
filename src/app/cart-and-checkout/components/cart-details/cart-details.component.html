@@ -1,0 +1,34 @@
+<div class="card" id="secondCard">
+    <div class="card-body" id="secondCardBody">
+        <h3 style="font-family: 'Lato'; font-weight: bold; margin-bottom: -3px;">Detalles</h3>
+        <hr>
+        <div class="d-flex justify-content-between">
+            <p style="font-family: 'Lato'">Subtotal</p>
+            <p style="font-family: 'Lato';">{{total() | currency}}</p>
+        </div>
+        <form>
+            <div class="iva">
+                <p>IVA (22%)</p>
+                <p>{{totalPrice.length === 0 ? (0 | currency) : (iva() | currency)}}</p>
+            </div>
+            <div class="location">
+                <p>Departamento *</p>
+                <select [(ngModel)]="location" (ngModelChange)="value($event)" name="select">
+                    <option 
+                    *ngFor="let deptos of departamentos" 
+                    [value]="deptos">
+                    {{deptos}}
+                    </option>
+                </select>
+            </div>
+            <hr>
+            <div class="d-flex justify-content-between">
+                <p>Precio Total: </p>
+                <p><strong>
+                    {{totalPrice.length === 0 ? (0 | currency) : (total() + locationArr[1] | currency)}}
+                </strong></p>
+            </div>
+            <button type="submit">Realizar compra</button>
+        </form>
+    </div>
+</div>

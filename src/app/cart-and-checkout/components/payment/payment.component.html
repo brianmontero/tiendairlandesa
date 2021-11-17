@@ -1,0 +1,57 @@
+<div class="container">
+    <div class="header">
+        <p>3/3</p>
+        <button>Atrás</button>
+    </div>
+    <h1>Método de pago</h1>
+    <div class="card mx-auto">
+        <div class="paypal mx-auto">
+            <button>
+                <i class="fab fa-paypal fa-2x"></i> &nbsp;
+                <a class="paytext">Paypal</a>
+            </button>
+        </div>
+        <div class="credit mx-auto">
+            <button (click)="creditSelected()">
+                <i class="fas fa-credit-card fa-2x"></i> &nbsp;
+                <a class="cardtext">Tarjeta</a>
+            </button>
+        </div>
+    </div>
+    <div class="cardForm" *ngIf="credit == 'card' ">
+        <form>
+            <div class="cardType">
+                <h3>Eliga su tarjeta *</h3>
+                <select>
+                    <option *ngFor="let card of cards" [value]="card">{{card}}</option>
+                </select>
+            </div>
+            <div class="cardNumber">
+                <h3>Número de tarjeta *</h3>
+                <input type="number">
+            </div>
+            <div class="cardExp">
+                <h3>Fecha de expiración *</h3>
+                <div class="d-flex">
+                    <div>
+                        <h6>Mes</h6>
+                        <select>
+                            <option *ngFor="let month of months" [value]="month">{{month}}</option>
+                        </select>
+                    </div> &nbsp;
+                    <div>
+                        <h6>Año</h6>
+                        <input type="number">
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h3>Número verificador *</h3>
+                <input type="number">
+            </div>
+            <div>
+                <button>Continuar</button>
+            </div>
+        </form>
+    </div>
+</div>

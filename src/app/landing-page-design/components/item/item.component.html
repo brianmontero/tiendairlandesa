@@ -1,0 +1,15 @@
+<div id="tarjeta">
+    <div class="thumbnail mx-auto">
+        <img [src]="productItem.imageLink" alt="...">
+    </div>
+    <div class="card-body">
+        <p class="title">{{productItem.title}}</p>
+        <p class="brand">{{productItem.brand}}</p>
+        <p class="price">{{productItem.price | currency}}</p>
+        <div class="add" (click)="stop($event)">
+            <button id="addBtn" (click)="addProductToCart(productItem)">
+                <i class="fas fa-cart-plus fa-lg" (click)="addProductToCart(productItem)" id="cartIcon"></i>
+            </button>
+        </div>
+    </div>
+</div>

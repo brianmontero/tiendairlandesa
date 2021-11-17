@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="d-flex justify-content-between" style="font-family: 'Lato';">
+                <h2>Carrito</h2>
+                <h3>{{list.length}} Items</h3>
+            </div>
+            <hr class="hrBar">
+            <div class="card mb-3" id="firstCard" *ngFor="let item of list">
+                <app-cart-items [item]="item"></app-cart-items>
+            <div *ngIf="list.length === 0">
+                <div>
+                    <i class="fas fa-exclamation" id="exclamationIcon"></i>
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <app-cart-details></app-cart-details>
+        </div>
+    </div>
+</div>

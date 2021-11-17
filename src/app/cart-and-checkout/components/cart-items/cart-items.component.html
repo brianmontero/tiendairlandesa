@@ -1,0 +1,25 @@
+<div class="row g-0">
+    <div class="col-md-4 d-flex justify-content-center">
+      <img src="{{item.imageLink}}" class="img-fluid rounded-start " alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+          <div class="d-flex justify-content-between">
+              <p class="itemTitle">{{item.title}}</p>
+              <div>
+                  <input type="number"
+                  id="cantidadInput"
+                  value="1" 
+                  min="1"
+                  (input)="quantity(item, $event)">
+              </div>
+              <p>{{item.price | currency}}</p>
+              <p>{{prodQuant === 1 ? (item.price | currency) : (prodQuant | currency)}}</p>
+              <div>
+                  <i class="fas fa-times-circle" 
+                  id="crossIcon"
+                  (click)="deleteProduct(item)"></i>
+              </div>
+          </div>
+      </div>
+  </div>

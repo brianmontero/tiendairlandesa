@@ -1,0 +1,31 @@
+<div class="container-fluid">
+    <div class="card">
+        <div class="card-body">
+            <div class="rango">
+                <h4>Rango de precios</h4>
+                <a (click)="applyFilters(0, 199, 'null')">$0-199</a>
+                <br>
+                <a (click)="applyFilters(200, 399, 'null')">$200-399</a>
+                <br>
+                <a (click)="applyFilters(400, 599, 'null')">$400-599</a>
+                <br>
+                <a (click)="applyFilters(600, 799, 'null')">$600-799</a>
+                <br>
+                <a (click)="applyFilters(800, 999, 'null')">$800-999</a>
+                <br>
+                <a (click)="applyFilters(1000, infinity, 'null')">$1000-max</a>
+            </div>
+            <div>
+                <h4>Color</h4>
+                <div class="d-flex gap-3" id="colorContainer">
+                    <div class="red" (click)="applyFilters(0, 0, 'red')"></div>
+                    <div class="black" (click)="applyFilters(0, 0, 'black')"></div>
+                    <div class="blue" (click)="applyFilters(0, 0, 'blue')"></div>
+                    <div class="green" (click)="applyFilters(0, 0, 'green')"></div>
+                    <div class="grey" (click)="applyFilters(0, 0, 'grey')"></div>
+                    <div class="white" (click)="applyFilters(0, 0, 'white')"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
