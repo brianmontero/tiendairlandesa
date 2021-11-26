@@ -1,24 +1,34 @@
 <div class="container">
     <div class="card">
-        <form class="mx-auto">
+        <h2 style="font-family: 'Lato'" class="text-center">Registro</h2>
+        <form class="mx-auto" [formGroup]="formRegister" (submit)="send()" novalidate>
             <div class="email mx-auto">
                 <h4>Email</h4>
-                <input type="email" placeholder="Email" class="form-control">
+                <input type="email" placeholder="Email" #email 
+                class="form-control"
+                formControlName="email">
+                <p *ngIf="formRegister.get('email').invalid && formRegister.get('email').touched"
+                id="emailAlert">
+                    El email no es válido
+                </p>
             </div>
             <div class="pass mx-auto">
                 <h4>Contraseña</h4>
-                <input type="password" placeholder="Contraseña" class="form-control">
-            </div>
-            <div class="repeatPass mx-auto">
-                <h4>Repetir Contraseña</h4>
-                <input type="password" placeholder="Repetir Contraseña" class="form-control">
+                <input type="password" placeholder="Contraseña" class="form-control"
+                formControlName="password">
+                <p *ngIf="formRegister.get('password').invalid && formRegister.get('password').touched"
+                id="passwordAlert">
+                    La contraseña no es válida (debe tener al menos seis caractéres)
+                </p>
             </div>
             <div class="terms d-flex mx-auto">
-                <input type="checkbox">
-                <h6>He leído y estoy de acuerdo con los <a href="#">términos y condiciones</a></h6>
+                <input type="checkbox" formControlName="check">
+                <h6>He leído y estoy de acuerdo con los <a routerLink="/terms-and-conditions">
+                    términos y condiciones
+                </a></h6>
             </div>
             <div class="register mx-auto">
-                <button type="submit">Registrarme</button>
+                <button type="submit" [disabled]="formRegister.invalid">Registrarme</button>
             </div>
         </form>
     </div>

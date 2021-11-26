@@ -1,23 +1,33 @@
 <div class="container">
     <div class="card mx-auto">
-        <form>
+        <h2 style="font-family: 'Lato';" class="text-center">Ingresar</h2>
+        <form [formGroup]="formLogin" (submit)="send()" novalidate>
             <div class="email mx-auto">
                 <h4>Email</h4>
-                <input type="email" placeholder="Email" #user class="form-control">
+                <input type="email" placeholder="Email" #user class="form-control" formControlName="email">
                 <i class="fas fa-user"></i>
+                <p 
+                id="emailAlert"
+                *ngIf="formLogin.get('email').invalid && formLogin.get('email').touched">
+                El email es inválido
+                </p>
             </div>
             <div class="pass mx-auto">
                 <h4>Contraseña</h4>
-                <input type="password" placeholder="Contraseña" #pass class="form-control">
+                <input type="password" placeholder="Contraseña" class="form-control" #pass formControlName="password">
                 <i class="fas fa-key"></i>
+                <p *ngIf="formLogin.get('password').invalid && formLogin.get('password').touched"
+                id="passwordAlert">
+                    La contraseña es incorrecta (debe tener más de seis caractéres)
+                </p>
             </div>
             <div class="submit mx-auto">
-                <button type="submit">Ingresar</button>
+                <button type="submit" [disabled]="formLogin.invalid">
+                    Ingresar
+                </button>
             </div>
         </form>
         <div class="info mx-auto">
-            <a href="#">Olvidé mi contraseña</a>
-            <br>
             <a routerLink="/register">Registrarme</a>
         </div>
     </div>

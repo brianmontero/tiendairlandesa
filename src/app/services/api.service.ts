@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Products } from '../models/products.model';
 import { Observable } from 'rxjs';
-import { filter, map } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -71,5 +71,13 @@ export class ApiService {
     .pipe(
       map(val => val.filter(v => v.price >= range1 && v.price <= range2))
     )
+  }
+
+  getSearch(value: string): Observable<Products[]> {
+    return this.http.get<Products[]>(this._url)
+    .pipe(
+      map(val => val
+        .filter(v => v.title.toLowerCase().startsWith(value)))
+    );
   }
 }

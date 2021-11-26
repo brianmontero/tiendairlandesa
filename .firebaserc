@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "tiendairlandesa": {
+      "hosting": {
+        "ShoppingApp": [
+          "tiendairlandesa"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "tiendairlandesa"
+  }
+}

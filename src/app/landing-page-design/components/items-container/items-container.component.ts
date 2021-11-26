@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Products } from 'src/app/models/products.model';
 import { ApiService } from 'src/app/services/api.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FilterMessengerService } from 'src/app/services/filter-messenger.service';
 import { Filter } from 'src/app/models/filter';
 
@@ -15,33 +15,39 @@ export class ItemsContainerComponent implements OnInit {
   @Input() category: string = "";
   productList: Products[] = [];
   backUpProductList: Products[] = [];
+  searchValue: string;
   
   constructor(private api: ApiService, 
   private router: Router,
-  private filter: FilterMessengerService) { }
+  private filter: FilterMessengerService,
+  private route: ActivatedRoute) { }
     
-ngOnInit(): void {
-  if (this.category == "mujeres") {
-    this.getMujeres();
+  ngOnInit() {
+    if (this.category == "mujeres") {
+      this.getMujeres();
+    }
+    else if (this.category == "hombres") {
+      this.getHombres();
+    }
+    else if (this.category == "kids") {
+      this.getKids();
+    }
+    else if (this.category == "unisex") {
+      this.getUnisex();
+    }
+    else if (this.category == "calzado") {
+      this.getCalzado();
+    }
+    else if (this.category == "busqueda") {
+      this.searchValue = this.route.snapshot.paramMap.get('search');
+      this.getSearchResults();
+    }
+    else {
+      this.getGeneral();
+    }
+    
+    this.filters();
   }
-  else if (this.category == "hombres") {
-    this.getHombres();
-  }
-  else if (this.category == "kids") {
-    this.getKids();
-  }
-  else if (this.category == "unisex") {
-    this.getUnisex();
-  }
-  else if (this.category == "calzado") {
-    this.getCalzado();
-  }
-  else {
-    this.getGeneral();
-  }
-  
-  this.filters();
-}
 
   filters() {
     this.filter.getFilters().subscribe(r => {
@@ -100,6 +106,12 @@ ngOnInit(): void {
     return this.api.getCalzadoSection().subscribe(
       x => this.productList = x
     )
+  }
+
+  getSearchResults() {
+    return this.api.getSearch(this.searchValue).subscribe(
+      s => this.productList = s
+      )
   }
 
 }

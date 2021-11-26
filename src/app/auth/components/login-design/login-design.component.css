@@ -49,6 +49,11 @@
     background-color: darkred;
 }
 
+.submit button:disabled,
+.submit button[disabled] {
+    background-color: #CCC;
+}
+
 input {
     border-radius: 0;
 }
@@ -81,4 +86,16 @@ input:focus {
 
 .info a:hover {
     text-decoration: underline;
+}
+
+#emailAlert {
+    color: red;
+    margin-top: 5px;
+    font-family: 'Lato';
+}
+
+#passwordAlert {
+    color: red;
+    margin-top: 5px;
+    font-family: 'Lato';
 }

@@ -66,6 +66,10 @@ input[type="search"]::-webkit-search-results-decoration {
     right: 30px;
 }
 
+#searchIcon:hover {
+    cursor: pointer;
+}
+
 #userIcon {
     color: #FFF;
 }
@@ -108,4 +112,45 @@ input[type="search"]::-webkit-search-results-decoration {
 
 .cart:hover {
     cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    background-color: #303030;
+    left: 0;
+    top: 100%;
+    width: 100%;
+}
+
+.dropdown-menu a {
+    width: 100%;
+}
+
+.dropdown-menu li {
+    width: 100%;
+}
+
+.dropdown-menu a:hover {
+    background-color: #404040;
+    cursor: pointer;
+}
+
+.dropdown button {
+    border: none;
+    color: #FFF;
+    background-color: transparent;
+}
+
+.dropdown button:focus {
+    box-shadow: none;
+}
+
+#userIcon2 {
+    position: relative;
+    top: 10px;
+    color: #FFF;
 }

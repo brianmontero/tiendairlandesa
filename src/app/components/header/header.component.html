@@ -1,10 +1,22 @@
 <nav class="navbar navbar-expand-lg" id="initialNav">
   <div class="container-fluid" id="initialCont">
-    <div>
+    <div *ngIf="!sw">
       <i class="far fa-user" id="userIcon"></i>
       <a routerLink="/login" class="ingresar">Ingresar</a>
       <div class="vl d-inline"></div>
       <a routerLink="/register" class="registrarse">Registrarse</a>
+    </div>
+    <div *ngIf="sw" class="d-flex">
+      <i class="far fa-user" id="userIcon2"></i>
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+          {{username}}
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          <li><a class="dropdown-item" href="#">Mi perfil</a></li>
+          <li><a class="dropdown-item" (click)="logout()">Cerrar sesión</a></li>
+        </ul>
+      </div>
     </div>
     <div class="cart" routerLink="/cart">
       <a routerLink="/cart" class="d-inline"><i class="fas fa-shopping-cart" id="cartIcon"></i></a>
@@ -42,8 +54,9 @@
       </ul>
 
       <div class="d-flex">
-        <input type="search" placeholder="Buscar productos..." class="form-control" id="searchInput">
-        <i class="fas fa-search fa-lg" id="searchIcon"></i>
+        <input type="search" placeholder="Buscar productos..." class="form-control" id="searchInput"
+        #busqueda>
+        <i class="fas fa-search fa-lg" id="searchIcon" (click)="search(busqueda.value)"></i>
       </div>
     </div>
 </nav>

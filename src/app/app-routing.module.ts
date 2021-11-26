@@ -9,6 +9,8 @@ import { LandingPageComponent } from './pages/landing-page/landing-page.componen
 import { LoginComponent } from './pages/login/login.component';
 import { MujeresSectionComponent } from './pages/mujeres-section/mujeres-section.component';
 import { RegisterComponent } from './pages/register/register.component';
+import { SearchComponent } from './pages/search/search.component';
+import { TermsAndConditionsComponent } from './pages/terms-and-conditions/terms-and-conditions.component';
 import { UnisexSectionComponent } from './pages/unisex-section/unisex-section.component';
 
 const routes: Routes = [
@@ -21,7 +23,9 @@ const routes: Routes = [
   { path: 'kids', component: KidsSectionComponent },
   { path: 'calzado', component: CalzadoSectionComponent },
   { path: 'unisex', component: UnisexSectionComponent },
-  { path: 'cart', component: CartComponent }
+  { path: 'cart', component: CartComponent },
+  { path: 'terms-and-conditions', component: TermsAndConditionsComponent },
+  { path: 'busqueda/:search', component: SearchComponent }
 ];
 
 @NgModule({

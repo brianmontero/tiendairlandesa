@@ -16,12 +16,19 @@ import { CalzadoSectionComponent } from './pages/calzado-section/calzado-section
 import { CartComponent } from './pages/cart/cart.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
+import { TermsComponent } from './components/terms/terms.component';
+import { TermsAndConditionsComponent } from './pages/terms-and-conditions/terms-and-conditions.component';
 // Módulos
 import { AppRoutingModule } from './app-routing.module';
 import { LandingPageDesignModule } from './landing-page-design/landing-page-design.module';
 import { AuthModule } from './auth/auth.module';
 import { CartAndCheckoutModule } from './cart-and-checkout/cart-and-checkout.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { environment } from 'src/environments/environment';
+import { SearchDesignComponent } from './components/search-design/search-design.component';
+import { SearchComponent } from './pages/search/search.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +44,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     KidsSectionComponent,
     UnisexSectionComponent,
     CalzadoSectionComponent,
-    CartComponent
+    CartComponent,
+    TermsComponent,
+    TermsAndConditionsComponent,
+    SearchDesignComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +57,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AuthModule,
     AppRoutingModule,
     CartAndCheckoutModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]

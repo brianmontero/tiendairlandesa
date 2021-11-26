@@ -10,6 +10,7 @@ import { CartService } from 'src/app/services/cart.service';
 export class ItemComponent implements OnInit {
 
   @Input() productItem: any
+  @Input() searchProducts: Products[];
   products: Products[] = [];
 
   constructor(private cart: CartService) { }
@@ -21,9 +22,6 @@ export class ItemComponent implements OnInit {
   addProductToCart(prod: Products) {
     if (!this.products.includes(prod)) {
       this.cart.addProduct(prod);
-    }
-    else {
-      //pass
     }
   }
 

@@ -85,6 +85,25 @@ form h4 {
     height: 40px;
 }
 
-.register button:hover {
-    background-color: darkred;
+.register button:disabled,
+.register button[disabled] {
+    background-color: #CCC;
+}
+
+#emailAlert {
+    color: Red;
+    margin-top: 5px;
+    font-family: 'Lato';
+}
+
+#passwordAlert {
+    color: red;
+    margin-top: 5px;
+    font-family: 'Lato';
+}
+
+#repeatPasswordAlert {
+    color: red;
+    margin-top: 5px;
+    font-family: 'Lato';
 }
