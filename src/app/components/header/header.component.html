@@ -13,7 +13,7 @@
           {{username}}
         </button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-          <li><a class="dropdown-item" href="#">Mi perfil</a></li>
+          <li><a class="dropdown-item" routerLink="/favorites">Favoritos</a></li>
           <li><a class="dropdown-item" (click)="logout()">Cerrar sesión</a></li>
         </ul>
       </div>
@@ -55,7 +55,8 @@
 
       <div class="d-flex">
         <input type="search" placeholder="Buscar productos..." class="form-control" id="searchInput"
-        #busqueda>
+        #busqueda
+        (keyup.enter)="search(busqueda.value)">
         <i class="fas fa-search fa-lg" id="searchIcon" (click)="search(busqueda.value)"></i>
       </div>
     </div>

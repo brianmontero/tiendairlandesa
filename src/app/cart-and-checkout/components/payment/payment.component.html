@@ -1,15 +1,17 @@
-<div class="container">
+<div class="container mt-4 mb-4">
     <div class="header">
         <p>3/3</p>
-        <button>Atrás</button>
+        <button (click)="goBack()">Atrás</button>
     </div>
     <h1>Método de pago</h1>
     <div class="card mx-auto">
         <div class="paypal mx-auto">
-            <button>
+            <a href="https://www.paypal.com/signin" target="_blank">
+                <button>
                 <i class="fab fa-paypal fa-2x"></i> &nbsp;
                 <a class="paytext">Paypal</a>
-            </button>
+                </button>
+            </a>
         </div>
         <div class="credit mx-auto">
             <button (click)="creditSelected()">
@@ -18,39 +20,55 @@
             </button>
         </div>
     </div>
-    <div class="cardForm" *ngIf="credit == 'card' ">
-        <form>
+    <div class="cardForm" *ngIf="credit">
+        <form [formGroup]="formPayment">
             <div class="cardType">
-                <h3>Eliga su tarjeta *</h3>
-                <select>
+                <p>Eliga su tarjeta *</p>
+                <select [(ngModel)]="selected" (ngModelChange)="value()" name="select"
+                [ngModelOptions]="{standalone: true}">
                     <option *ngFor="let card of cards" [value]="card">{{card}}</option>
                 </select>
             </div>
             <div class="cardNumber">
-                <h3>Número de tarjeta *</h3>
-                <input type="number">
+                <p>Número de tarjeta *</p>
+                <span>
+                    <input type="number" oninput="this.value=this.value.slice(0,this.maxLength)" maxlength="16" formControlName="cardNumber" placeholder="0000 0000 0000 0000">
+                </span>
+                <br>
+                <small *ngIf="formPayment.get('cardNumber').invalid && 
+                              formPayment.get('cardNumber').touched"
+                              style="color: red;">
+                    Este campo es obligatorio o es inválido
+                </small>
             </div>
             <div class="cardExp">
-                <h3>Fecha de expiración *</h3>
-                <div class="d-flex">
-                    <div>
-                        <h6>Mes</h6>
-                        <select>
-                            <option *ngFor="let month of months" [value]="month">{{month}}</option>
-                        </select>
-                    </div> &nbsp;
-                    <div>
-                        <h6>Año</h6>
-                        <input type="number">
-                    </div>
-                </div>
+                <p>Fecha de expiración *</p>
+                <span class="expiration">
+                    <input type="text" placeholder="MM" class="expMonth" maxlength="2" size="2" formControlName="month">
+                    <span>/</span>
+                    <input type="text" placeholder="AA" class="expYear" maxlength="2" size="2" formControlName="year">
+                </span>
+                <small *ngIf="this.formPayment.get('month').invalid && 
+                              this.formPayment.get('month').touched && 
+                              this.formPayment.get('year').invalid &&
+                              this.formPayment.get('year').touched"
+                              style="color: red;">
+                    Este campo es obligatorio o es inválido
+                </small>
             </div>
-            <div>
-                <h3>Número verificador *</h3>
-                <input type="number">
+            <div class="verificator">
+                <p>Número verificador *</p>
+                <input type="number" oninput="this.value=this.value.slice(0,this.maxLength)" maxlength="3"
+                placeholder="xxx"
+                formControlName="verificationNumber"> &nbsp;
+                <small *ngIf="this.formPayment.get('verificationNumber').invalid && 
+                              this.formPayment.get('verificationNumber').touched"
+                              style="color: red;">
+                    Este campo es obligatorio o es inválido
+                </small>
             </div>
-            <div>
-                <button>Continuar</button>
+            <div class="btnContainer">
+                <button [disabled]="this.formPayment.invalid" (click)="cardDone()" >Continuar</button>
             </div>
         </form>
     </div>

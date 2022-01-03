@@ -18,6 +18,8 @@ import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { TermsComponent } from './components/terms/terms.component';
 import { TermsAndConditionsComponent } from './pages/terms-and-conditions/terms-and-conditions.component';
+import { SearchComponent } from './pages/search/search.component';
+import { SearchDesignComponent } from './components/search-design/search-design.component';
 // Módulos
 import { AppRoutingModule } from './app-routing.module';
 import { LandingPageDesignModule } from './landing-page-design/landing-page-design.module';
@@ -26,9 +28,15 @@ import { CartAndCheckoutModule } from './cart-and-checkout/cart-and-checkout.mod
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { environment } from 'src/environments/environment';
-import { SearchDesignComponent } from './components/search-design/search-design.component';
-import { SearchComponent } from './pages/search/search.component';
+import { BillingPageComponent } from './pages/billing-page/billing-page.component';
+import { PaymentPageComponent } from './pages/payment-page/payment-page.component';
+import { FavoritesDesignComponent } from './components/favorites-design/favorites-design.component';
+import { FavoritesPageComponent } from './pages/favorites-page/favorites-page.component';
+import { FavoritesItemComponent } from './components/favorites-item/favorites-item.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -48,9 +56,15 @@ import { SearchComponent } from './pages/search/search.component';
     TermsComponent,
     TermsAndConditionsComponent,
     SearchDesignComponent,
-    SearchComponent
+    SearchComponent,
+    BillingPageComponent,
+    PaymentPageComponent,
+    FavoritesDesignComponent,
+    FavoritesPageComponent,
+    FavoritesItemComponent
   ],
   imports: [
+    ReactiveFormsModule,
     BrowserModule,
     LandingPageDesignModule,
     HttpClientModule,
@@ -59,7 +73,9 @@ import { SearchComponent } from './pages/search/search.component';
     CartAndCheckoutModule,
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    AngularFireDatabaseModule,
+    AngularFirestoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -3,7 +3,6 @@ import { Products } from 'src/app/models/products.model';
 import { ApiService } from 'src/app/services/api.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FilterMessengerService } from 'src/app/services/filter-messenger.service';
-import { Filter } from 'src/app/models/filter';
 
 @Component({
   selector: 'app-items-container',
@@ -14,7 +13,6 @@ export class ItemsContainerComponent implements OnInit {
   
   @Input() category: string = "";
   productList: Products[] = [];
-  backUpProductList: Products[] = [];
   searchValue: string;
   
   constructor(private api: ApiService, 
@@ -39,8 +37,11 @@ export class ItemsContainerComponent implements OnInit {
       this.getCalzado();
     }
     else if (this.category == "busqueda") {
-      this.searchValue = this.route.snapshot.paramMap.get('search');
-      this.getSearchResults();
+      // this.searchValue = this.route.snapshot.paramMap.get('search');
+      this.route.params.subscribe(params => {
+        this.searchValue = params['search'];
+        this.getSearchResults(this.searchValue);
+      })
     }
     else {
       this.getGeneral();
@@ -108,10 +109,10 @@ export class ItemsContainerComponent implements OnInit {
     )
   }
 
-  getSearchResults() {
-    return this.api.getSearch(this.searchValue).subscribe(
+  getSearchResults(search: string) {
+    return this.api.getSearch(search).subscribe(
       s => this.productList = s
-      )
+    )
   }
 
 }

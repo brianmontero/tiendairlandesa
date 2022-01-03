@@ -6,7 +6,7 @@
             <p style="font-family: 'Lato'">Subtotal</p>
             <p style="font-family: 'Lato';">{{total() | currency}}</p>
         </div>
-        <form>
+        <form (submit)="send(finalprice.textContent)">
             <div class="iva">
                 <p>IVA (22%)</p>
                 <p>{{totalPrice.length === 0 ? (0 | currency) : (iva() | currency)}}</p>
@@ -24,7 +24,7 @@
             <hr>
             <div class="d-flex justify-content-between">
                 <p>Precio Total: </p>
-                <p><strong>
+                <p><strong #finalprice>
                     {{totalPrice.length === 0 ? (0 | currency) : (total() + locationArr[1] | currency)}}
                 </strong></p>
             </div>

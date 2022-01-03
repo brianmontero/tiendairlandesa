@@ -14,6 +14,7 @@ form {
 }
 
 .pass {
+    position: relative;
     display: flex;
     flex-direction: column;
     max-width: 25rem;
@@ -106,4 +107,16 @@ form h4 {
     color: red;
     margin-top: 5px;
     font-family: 'Lato';
+}
+
+#eyeIcon {
+    position: absolute;
+    color: grey;
+    left: 370px;
+    top: 45px;
+}
+
+#eyeIcon:hover {
+    cursor: pointer;
+    color: black;
 }

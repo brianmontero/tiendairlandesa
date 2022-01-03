@@ -12,12 +12,17 @@
     font-size: 14px;
 }
 
+.price {
+    font-weight: bold;
+    color: green;
+}
+
 button {
     width: 100%;
     height: 40px;
     border-radius: 5px;
     border: none;
-    background-color: #139809;
+    background-color: #202020;
     color: #FFF;
     font-family: 'Lato';
     font-size: 20px;
@@ -25,5 +30,16 @@ button {
 }
 
 button:hover {
-    background-color: green;
+    background-color: #404040;
+}
+
+#favIcon {
+    color: black;
+    margin-top: 5px;
+    transition: 0.1s;
+}
+
+#favIcon:hover {
+    color: red;
+    cursor: pointer;
 }

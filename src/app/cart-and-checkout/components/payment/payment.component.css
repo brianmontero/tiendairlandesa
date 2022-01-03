@@ -75,21 +75,32 @@ h1 {
     margin: 2rem 0 2rem 0;
 }
 
-.cardForm h3 {
+.cardForm p {
     font-family: 'Lato';
+    font-size: 18px;
 }
 
 .cardType {
     margin-bottom: 1rem;
 }
 
+.cardType p {
+    font-size: 18px;
+    margin-bottom: 1rem;
+}
+
 .cardType select {
     width: 300px;
     height: 40px;
+    font-family: 'Lato';
 }
 
 .cardType select:focus {
     outline: none;
+}
+
+.cardType option {
+    font-family: 'Lato';
 }
 
 .cardNumber {
@@ -97,8 +108,9 @@ h1 {
 }
 
 .cardNumber input {
-    width: 300px;
+    width: 100%;
     height: 40px;
+    font-family: 'Lato';
 }
 
 .cardNumber input:focus {
@@ -112,4 +124,72 @@ input::-webkit-inner-spin-button {
 
 .cardExp {
     margin-bottom: 1rem;
+}
+
+.cardExp select {
+    font-family: 'Lato';
+    font-weight: bold;
+    height: 30px;
+}
+
+.cardExp option {
+    font-weight: bold;
+}
+
+.cardExp input:focus {
+    outline: none;
+    font-family: 'Lato';
+}
+
+.btnContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.verificator input {
+    width: 100px;
+}
+
+.verificator input:focus {
+    outline: none;
+}
+
+.btnContainer button {
+    margin-top: 1rem;
+    border-radius: 5px;
+    border: none;
+    background-color: #202020;
+    color: #FFF;
+    width: 100px;
+    height: 40px;
+    font-family: 'Lato';
+    font-size: 18px;
+    transition: 0.2s;
+}
+
+.btnContainer button:hover {
+    background-color:green;
+}
+
+.header p {
+    font-family: 'Lato';
+    font-size: 18px;
+}
+
+.btnContainer button:disabled,
+.btnContainer button[disabled] {
+    background-color: #CCC;
+}
+
+.expiration input {
+    border: 0;
+}
+
+.expYear {
+    margin-left: 10px;
+    width: 35px;
+}
+
+.expMonth {
+    width: 35px;
 }

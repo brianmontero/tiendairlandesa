@@ -32,24 +32,26 @@
                 <div>
                     <h2 class="text-center">¡Comunícate con nosotros!</h2>
                     <div>
-                        <form>
+                        <form [formGroup]="form">
                             <div class="nombre">
                                 <label class="labelContact">Nombre *</label>
                                 <br>
-                                <input type="text" class="form-control">
+                                <input type="text" class="form-control" formControlName="name">
                             </div>
                             <div class="email">
                                 <label class="labelContact">Email *</label>
                                 <br>
-                                <input type="email" class="form-control">
+                                <input type="email" class="form-control" formControlName="email">
                             </div>
                             <div class="mensaje">
                                 <label class="labelContact">Mensaje *</label>
                                 <br>
-                                <textarea></textarea>
+                                <textarea formControlName="message"></textarea>
                             </div>
                             <div>
-                                <button type="submit">Enviar</button>
+                                <button type="submit" (click)="submit()" [disabled]="this.form.invalid">
+                                    Enviar
+                                </button>
                             </div>
                         </form>
                     </div>
@@ -66,8 +68,7 @@
                 class="github"
                 target="_blank">
                 Brian Montero
-                </a>.
-                Tienda Irlandesa es una tienda ficticia.
+                </a>
             </p>
         </div>
     </div>

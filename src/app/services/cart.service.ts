@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Products } from '../models/products.model';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { CheckoutProduct } from '../models/checkout-product';
+import { ToastrService } from 'ngx-toastr';
 
 @Injectable({
   providedIn: 'root'
@@ -9,9 +10,12 @@ import { CheckoutProduct } from '../models/checkout-product';
 export class CartService {
 
   public productList: Products[] = [];
+  public totalOfProducts: CheckoutProduct[] = [];
+  public cartProductsList: any[] = [];
   public product$ = new BehaviorSubject<Products[]>([]);
   public total$ = new BehaviorSubject<CheckoutProduct[]>([]);
-  public totalOfProducts: CheckoutProduct[] = [];
+  public cartProducts$ = new BehaviorSubject<any[]>([]);
+  
   
   constructor() { }
 
@@ -20,13 +24,16 @@ export class CartService {
   }
 
   addProduct(product: Products) {
-    let id = product.id;
-    let quantity = 1;
-    let price = product.price;
-    this.productList.push(product);
-    this.totalOfProducts.push({id, quantity, price});
-    this.total$.next(this.totalOfProducts);
-    this.product$.next(this.productList);
+    if (!this.productList.some(e => e.id === product.id)) {
+      let id = product.id;
+      let quantity = 1;
+      let price = product.price;
+      
+      this.productList.push(product);
+      this.totalOfProducts.push({id, quantity, price});
+      this.total$.next(this.totalOfProducts);
+      this.product$.next(this.productList);
+    }
   } 
 
   totalPrice(obj: CheckoutProduct) {
@@ -67,4 +74,14 @@ export class CartService {
     this.productList.splice(position, 1);
     this.deleteCheckoutProduct(index);
   }
+
+  getCartProducts(): Observable<any[]> {
+    return this.cartProducts$.asObservable();
+  }
+
+  cartProductSent(obj: any) {
+    this.cartProductsList.push(obj);
+    this.cartProducts$.next(this.cartProductsList);
+  }
+
 }

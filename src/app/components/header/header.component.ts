@@ -17,11 +17,11 @@ export class HeaderComponent implements OnInit {
   constructor(private cart: CartService, private auth: AuthService, private router: Router) {
     this.auth.authState().subscribe(r => {
       if (r === null) {
-      this.sw = false;
+        this.sw = false;
       }
       else {
-          this.sw = true;
-          this.username = r.email.split("@")[0];
+        this.sw = true;
+        this.username = r.displayName;
       }
     })
   }
@@ -30,12 +30,18 @@ export class HeaderComponent implements OnInit {
     this.cart.getTotalPrice().subscribe(r => this.quantity = r.length);
   }
 
-  logout() {
-    this.auth.logout();
-    window.location.reload();
+  async logout() {
+    try {
+      await this.auth.logout();
+      await this.router.navigate(['/']);
+      window.location.reload();
+    }
+    catch (e) {
+      alert(e);
+    }
   }
 
-  search(searchValue: any) {
+  search(searchValue: string) {
     this.router.navigate(['/busqueda', searchValue]);
   }
 

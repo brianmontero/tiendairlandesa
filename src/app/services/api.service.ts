@@ -9,7 +9,8 @@ import { map } from 'rxjs/operators';
 })
 export class ApiService {
 
-  _url: string = 'http://localhost:3000/products';
+  // _url: string = 'http://localhost:3000/products';
+  _url: string = 'https://tiendairlandesa-default-rtdb.firebaseio.com/products.json';
 
   constructor(private http: HttpClient) { }
 
@@ -77,7 +78,8 @@ export class ApiService {
     return this.http.get<Products[]>(this._url)
     .pipe(
       map(val => val
-        .filter(v => v.title.toLowerCase().startsWith(value)))
+        .filter(v => v.title.toUpperCase().startsWith(value.toUpperCase()))
+        )
     );
   }
 }

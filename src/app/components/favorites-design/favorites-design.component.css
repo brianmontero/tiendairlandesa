@@ -1,0 +1,32 @@
+.container {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.col {
+    width: 14rem;
+}
+
+h2 {
+    font-family: 'Lato';
+}
+
+.notFound button {
+    width: 150px;
+    height: 35px;
+    font-family: 'Lato';
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+.notFound button:hover {
+    background-color: #CCC;
+}
+
+.notFound p {
+    font-family: 'Lato';
+    font-size: 22px;
+    font-weight: bold;
+}

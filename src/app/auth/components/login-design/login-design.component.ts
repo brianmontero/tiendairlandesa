@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -13,13 +13,9 @@ export class LoginDesignComponent implements OnInit {
   public formLogin: FormGroup;
   username: string;
 
-  constructor(private auth: AuthService, private formBuilder: FormBuilder, private toastr: ToastrService) { 
-    this.auth.authState().subscribe(u => {
-      if (u != null) {
-        this.username = u.email.split("@")[0];
-      }
-    });
-  }
+  constructor(private auth: AuthService,
+     private formBuilder: FormBuilder,
+     private router: Router) { }
 
   ngOnInit(): void {
     this.formLogin = this.formBuilder.group({
@@ -31,9 +27,8 @@ export class LoginDesignComponent implements OnInit {
   async login(user: string, password: string) {
     try {
       await this.auth.login(user, password);
-      await setTimeout(() => {
-        this.toastr.success('Sesión iniciada con éxito', `Bienvenido ${this.username}`);
-      }, 1000);
+      await this.router.navigate(['/']);
+      window.location.reload();
     }
     catch (error: any) {
       switch (error.code) {

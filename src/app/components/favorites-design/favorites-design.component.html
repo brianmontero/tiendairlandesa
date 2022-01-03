@@ -1,0 +1,17 @@
+<div class="container">
+    <h2>Favoritos</h2>
+    <hr>
+    <div class="row">
+        <div class="col" *ngFor="let item of products">
+            <app-favorites-item [list]="item" (click)="showItem(item.id)"></app-favorites-item>
+        </div>
+        <div *ngIf="products.length === 0">
+            <div class="d-flex justify-content-center">
+                <div class="notFound">
+                    <p class="text-center">No hay favoritos</p>
+                    <button (click)="goToStore()">Explorar catálogo</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

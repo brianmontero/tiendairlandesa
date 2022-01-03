@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { CheckoutProduct } from 'src/app/models/checkout-product';
 import { CartService } from 'src/app/services/cart.service';
 
@@ -34,7 +36,7 @@ export class CartDetailsComponent implements OnInit {
     'Treinta y Tres - $208',
   ];
 
-  constructor(private cart: CartService) { }
+  constructor(private cart: CartService, private toastr: ToastrService, private route: Router) { }
 
   ngOnInit() {
     this.cart.getTotalPrice().subscribe(r => {
@@ -65,6 +67,18 @@ export class CartDetailsComponent implements OnInit {
     });
   }
   
-
-
+  send(totalPrice: string) {
+    if (this.totalPrice.length === 0) {
+      this.toastr.error('No hay ningún producto en el carrito', 'Error', {
+        positionClass: 'toast-bottom-left',
+      });
+    }
+    else {
+      let total = parseInt(totalPrice.slice(2, -4).split(',').join(''));
+      let amount = this.totalPrice.length;
+      let location = this.location
+      this.cart.cartProductSent({total, amount, location});
+      this.route.navigate(['/billing']);
+    } 
+  }
 }

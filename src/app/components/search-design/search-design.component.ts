@@ -17,8 +17,14 @@ export class SearchDesignComponent implements OnInit {
   constructor(private route: ActivatedRoute, private api: ApiService) { }
 
   ngOnInit(): void {
-    this.search = this.route.snapshot.paramMap.get('search');
-    this.api.getSearch(this.search).subscribe(s => this.productList = s);
+    this.data();
+  }
+
+  data() {
+    this.route.params.subscribe(params => {
+      this.search = params['search'];
+      this.api.getSearch(this.search).subscribe(s => this.productList = s);
+    });
   }
 
 }

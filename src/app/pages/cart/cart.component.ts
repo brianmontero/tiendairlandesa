@@ -16,11 +16,9 @@ import { animate, style, transition, trigger } from '@angular/animations';
 })
 export class CartComponent implements OnInit {
 
-  a: number = 0;
   constructor() { }
 
   ngOnInit(): void {
-
   }
 
 }

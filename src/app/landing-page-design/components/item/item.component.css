@@ -55,3 +55,16 @@ i {
     align-items: center;
     color: #FFF;
 }
+
+#favIcon {
+    transform: scale(1.5);
+    position: relative;
+    top: -5px;
+    color: black;
+    transition: 0.1s;
+}
+
+#favIcon:hover {
+    transform: scale(1.8);
+    color: red;
+}

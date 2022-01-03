@@ -6,11 +6,36 @@
                 <h3>{{list.length}} Items</h3>
             </div>
             <hr class="hrBar">
-            <div class="card mb-3" id="firstCard" *ngFor="let item of list">
-                <app-cart-items [item]="item"></app-cart-items>
-            <div *ngIf="list.length === 0">
+            <div class="d-flex row text-center align-items-center" style="width: 100%;">
+                <div class="d-flex col">
+                    <p style="margin: 0 70px 0 280px; 
+                              color: grey; 
+                              font-family: 'Lato';
+                              display: flex;
+                              align-items: center;">
+                        Título
+                    </p>
+                    <p style="margin: 0 30px 0 30px;
+                              color: grey; 
+                              font-family: 'Lato';
+                              display: flex;
+                              align-items: center;">Cantidad</p>
+                    <p style="margin: 0 20px 0 0; color: grey; font-family: 'Lato';">
+                        Precio <br> unitario
+                    </p>
+                    <p style="margin: 0 0 0 10px; color: grey; font-family: 'Lato';">
+                        Precio <br> total
+                    </p>
+                </div>
+            </div>
+            <div class="scroll">
+                <div class="card mb-3" id="firstCard" *ngFor="let item of list">
+                    <app-cart-items [item]="item"></app-cart-items>
+                </div>
+                    <div *ngIf="list.length === 0">
                 <div>
-                    <i class="fas fa-exclamation" id="exclamationIcon"></i>
+                    <i class="fas fa-exclamation fa-3x" id="exclamationIcon"></i>
+                    <p id="excalamationText" class="text-center">No tienes ningún producto en el carro</p>
                 </div>
             </div>
             </div>

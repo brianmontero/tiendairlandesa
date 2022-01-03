@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { CartDesignComponent } from './components/cart-design/cart-design.component';
 import { CartItemsComponent } from './components/cart-items/cart-items.component';
@@ -18,7 +19,8 @@ import { PaymentComponent } from './components/payment/payment.component';
   ],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
     CartDesignComponent,

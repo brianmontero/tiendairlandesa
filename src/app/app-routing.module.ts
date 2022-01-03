@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+
+import { BillingPageComponent } from './pages/billing-page/billing-page.component';
 import { CalzadoSectionComponent } from './pages/calzado-section/calzado-section.component';
 import { CartComponent } from './pages/cart/cart.component';
 import { HombresSectionComponent } from './pages/hombres-section/hombres-section.component';
@@ -12,6 +14,8 @@ import { RegisterComponent } from './pages/register/register.component';
 import { SearchComponent } from './pages/search/search.component';
 import { TermsAndConditionsComponent } from './pages/terms-and-conditions/terms-and-conditions.component';
 import { UnisexSectionComponent } from './pages/unisex-section/unisex-section.component';
+import { PaymentPageComponent } from './pages/payment-page/payment-page.component';
+import { FavoritesPageComponent } from './pages/favorites-page/favorites-page.component';
 
 const routes: Routes = [
   { path: '', component: LandingPageComponent },
@@ -25,11 +29,15 @@ const routes: Routes = [
   { path: 'unisex', component: UnisexSectionComponent },
   { path: 'cart', component: CartComponent },
   { path: 'terms-and-conditions', component: TermsAndConditionsComponent },
-  { path: 'busqueda/:search', component: SearchComponent }
+  { path: 'busqueda/:search', component: SearchComponent },
+  { path: 'billing', component: BillingPageComponent },
+  { path: 'payment', component: PaymentPageComponent },
+  { path: 'favorites', component: FavoritesPageComponent }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  providers: [],
+  imports: [RouterModule.forRoot(routes, {scrollPositionRestoration: 'enabled'})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

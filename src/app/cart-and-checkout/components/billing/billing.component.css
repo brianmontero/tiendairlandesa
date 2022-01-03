@@ -56,7 +56,8 @@ input::-webkit-inner-spin-button {
 }
 
 .phone {
-    margin-top: 1rem;
+    margin: 1rem 0 2rem 0;
+
 }
 
 .email {
@@ -82,4 +83,64 @@ input::-webkit-inner-spin-button {
     font-family: 'Lato';
     font-weight: bold;
     margin-bottom: 3rem;
+    transition: 0.2s;
+}
+
+.button button:hover {
+    background-color: green;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header p {
+    font-family: 'Lato';
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.btnAtras {
+    border: none;
+    border-radius: 5px;
+    background-color: cornflowerblue;
+    font-family: 'Lato';
+    font-size: 20px;
+    color: black;
+    width: 100px;
+    transition: 0.2s;
+}
+
+.name small {
+    color: red;
+}
+
+.last-name small {
+    color: red;
+}
+
+.address small {
+    color: red;
+}
+
+.city small {
+    color: red;
+}
+
+.phone small {
+    color: red;
+}
+
+.postal small {
+    color: red;
+}
+
+.email small {
+    color: red;
+}
+
+.button button:disabled,
+.button button[disabled] {
+    background-color: #CCC;
 }

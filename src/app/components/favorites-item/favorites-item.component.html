@@ -1,0 +1,13 @@
+<div class="card mx-auto">
+    <img src="{{list.imageLink}}" alt="..." class="card-img-top">
+    <div class="card-body">
+        <h4 class="card-title text-center">{{list.title}}</h4>
+        <p class="text-center" style="font-size: 18px;">{{list.brand}}</p>
+        <p class="text-center" style="color: green; font-size: 18px; font-weight: bold;">
+            {{list.price | currency}}
+        </p>
+        <button class="d-flex justify-content-center mx-auto" (click)="deleteItem(list, $event)">
+            <p>Eliminar de favoritos</p>
+        </button>
+    </div>
+</div>
